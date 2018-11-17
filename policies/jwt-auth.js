@@ -1,4 +1,4 @@
-const jwtHandler = require('../jwt/jwtHandler')
+const jwtHandler = require('./jwt/jwtHandler')
 
 module.exports = {
     name: 'jwt-header',
