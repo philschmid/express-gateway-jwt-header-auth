@@ -2,6 +2,7 @@ var jwt = require('jsonwebtoken');
 const fs = require('fs')
 const publicKey = fs.readFileSync('./Public.key')
 
+//TODO: Keine Promise returnen
 class jwtHandler {
     constructor() {
         this.errorHandler = (reject, err) => {
