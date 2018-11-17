@@ -13,16 +13,16 @@ module.exports = {
                 if (jwtHandler.hasRole(req.get('Authorization'), actionParams.role)) {
                     next()
                 } else {
-                    res.status(401).send(JSON.stringify({
+                    res.status(401).json({
                         state: false,
                         description: 'Role missing'
-                    }))
+                    })
                 }
             } else {
-                res.status(401).send(JSON.stringify({
+                res.status(401).json({
                     state: false,
                     description: 'Token expired'
-                }))
+                })
 
             };
         }
