@@ -16,7 +16,9 @@
     "url": "https://github.com/philschmid/express-gateway-jwt-header-auth/issues"
   },
   "homepage": "https://github.com/philschmid/express-gateway-jwt-header-auth#readme",
-  "dependencies": {},
+  "dependencies": {
+    "jsonwebtoken": "^8.4.0"
+  },
   "devDependencies": {
     "eslint": "^5.9.0"
   }
