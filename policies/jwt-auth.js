@@ -8,7 +8,8 @@ module.exports = {
             console.log(req.get('Authorization'))
             console.log('Actionparams:')
             console.log(actionParams)
-            if (jwtHandler.verify(req.get('Authorization'))) {
+            console.log(req.get('Authorization'))
+            if (req.get('Authorization') && jwtHandler.verify(req.get('Authorization'))) {
                 if (jwtHandler.hasRole(req.get('Authorization'), actionParams.role)) {
                     next()
                 } else {
