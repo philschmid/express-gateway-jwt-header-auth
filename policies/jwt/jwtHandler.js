@@ -18,9 +18,9 @@ class jwtHandler {
             return false
         })
     }
-    hasRole(token, role) {
+    hasRole(token, roles) {
         return jwt.verify(token, publicKey, (err, decoded) => {
-            if (decoded.role.includes(role)) return true
+            if (decoded.role.some(r=> roles.includes(r))) return true
             return false
         })
     }

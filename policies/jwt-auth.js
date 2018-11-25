@@ -5,12 +5,12 @@ module.exports = {
     policy: (actionParams) => {
         return (req, res, next) => {
             console.log('Header:')
-            console.log(req.get('Authorization'))
-            console.log('Actionparams:')
+            console.log(req.get('authorization'))
+            console.log('actionparams:')
             console.log(actionParams)
-            console.log(req.get('Authorization'))
-            if (req.get('Authorization') && jwtHandler.verify(req.get('Authorization'))) {
-                if (jwtHandler.hasRole(req.get('Authorization'), actionParams.role)) {
+            console.log(req.get('authorization'))
+            if (req.get('authorization') && jwtHandler.verify(req.get('authorization'))) {
+                if (jwtHandler.hasRole(req.get('authorization'), actionParams.role)) {
                     next()
                 } else {
                     res.status(401).json({
